@@ -5,17 +5,18 @@ SocialiteLogin - Apple
 
 config\app.php
 
-'providers' => [
+	'providers' => [
     //....
     \SocialiteProviders\Manager\ServiceProvider::class, // add
     //....
-];
+	];
 
 -----------------------------------
 
 app/Providers/EventServiceProvider
 
-protected $listen = [
+
+	protected $listen = [
 
     \SocialiteProviders\Manager\SocialiteWasCalled::class => [
 
@@ -24,8 +25,9 @@ protected $listen = [
         'SocialiteProviders\\Apple\\AppleExtendSocialite@handle',
 
     ],
-    
-];
+
+    ];
+
 
 -----------------------------------
 
@@ -41,16 +43,16 @@ config\app.php
 
 // authorize with provider
 
-return Socialite::with('apple')->redirect();
+	return Socialite::with('apple')->redirect();
 
 // fetch user after callback
 
-$user = Socialite::with('apple')->user();
+	$user = Socialite::with('apple')->user();
 
 // fetch user using token ( token from apple authentication )
 
-$token = "***************";
+	$token = "***************";
 
-$user = Socialite::with('apple')->userFromToken($token));
+	$user = Socialite::with('apple')->userFromToken($token));
 
 -----------------------------------
