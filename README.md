@@ -16,10 +16,15 @@ config\app.php
 app/Providers/EventServiceProvider
 
 protected $listen = [
+
     \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+
         // add your listeners (aka providers) here
+
         'SocialiteProviders\\Apple\\AppleExtendSocialite@handle',
+
     ],
+    
 ];
 
 -----------------------------------
@@ -35,13 +40,17 @@ config\app.php
 -----------------------------------
 
 // authorize with provider
+
 return Socialite::with('apple')->redirect();
 
 // fetch user after callback
+
 $user = Socialite::with('apple')->user();
 
 // fetch user using token ( token from apple authentication )
+
 $token = "***************";
+
 $user = Socialite::with('apple')->userFromToken($token));
 
 -----------------------------------
