@@ -1,5 +1,5 @@
 # techtic-socialite-apple
-SocialiteLogin - Apple
+SocialiteLogin - Apple | Also works for laravel 5.7 or lower version:
 
 -----------------------------------
 
